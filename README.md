@@ -1,7 +1,5 @@
 # Predictive State-Aware Communication Triggering in Multi-Agent Reinforcement Learning
 
-Course project for BCSE334L (Predictive Analytics), DA1 — 30% implementation milestone.
-
 ## Problem
 
 Existing communication-aware MARL systems trigger inter-agent communication
@@ -11,9 +9,9 @@ alternative: each agent forecasts its own short-horizon future trajectory
 (via ARIMA) and triggers communication when the *forecast* indicates an
 impending collision — earlier than a reactive system would react.
 
-## Scope of this submission (Phase 1 / DA1)
+## Current status
 
-This milestone delivers:
+This repository currently contains:
 1. A fully working multi-agent grid environment (`env/grid_env.py`) with
    collision detection (same-cell and swap), goal tracking, and per-agent
    position history logging.
@@ -25,9 +23,9 @@ This milestone delivers:
 4. An experiment runner (`experiments/run_baseline.py`) that simulates the
    reactive baseline end-to-end and produces the first metrics/plots.
 
-**Not yet done (explicitly out of scope for this milestone):** the ARIMA
-forecaster is not wired into the live agent decision loop, and there is no
-predictive communication rule yet. See "Next phase" below.
+**Not yet done:** the ARIMA forecaster is not wired into the live agent
+decision loop, and there is no predictive communication rule yet. See
+"Roadmap" below.
 
 ## Project structure
 
@@ -96,7 +94,7 @@ all passing — see the tests directory for exact scenarios covered
 termination, reactive communication radius, greedy movement, ARIMA forecast
 shape/accuracy/fallback/constant-trajectory behavior).
 
-## Next phase (not in this submission)
+## Roadmap
 
 - Wire `ArimaTrajectoryForecaster` into the live agent decision loop so
   each agent forecasts its own position every step.
